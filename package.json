@@ -1,7 +1,12 @@
 {
   "name": "root",
   "private": true,
+  "scripts": {
+    "temp": "plop"
+  },
   "devDependencies": {
-    "lerna": "^4.0.0"
+    "lerna": "^4.0.0",
+    "plop": "^2.7.4",
+    "rollup-pkg": "^1.0.1"
   }
 }

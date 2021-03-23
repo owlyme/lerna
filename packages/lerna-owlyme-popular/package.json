@@ -10,6 +10,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.21.1",
     "lerna-owlyme-core": "^1.0.1"
-  }
+  },
+  "gitHead": "419e49b91b4ecd62316d6fed817ebade2baa5548"
 }
