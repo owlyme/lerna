@@ -8,4 +8,3 @@ module.exports = getPopularImg;
 // 测试代码，发布时删除
 getPopularImg().then((res) => console.log(res.data.length));
 
-// lerna add prpr-lerna-core --scope=prpr-lerna-popular
