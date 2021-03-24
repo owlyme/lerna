@@ -1,7 +1,13 @@
 { 
   "npmClient": "yarn",
   "packages": [
-    "packages/*"
+    "packages/*",
+    "workspace/*"
   ],
+  "command": {
+    "publish": {
+      "ignoreChanges": ["rollup-pkg/**"]
+    }
+  },
   "version": "1.0.2"
 }

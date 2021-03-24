@@ -23,13 +23,18 @@ module.exports = plop => {
       {
         type: 'add', // 添加文件
         path: 'packages/{{name}}/package.json',
-        templateFile: 'plop-template/component.hbs' // 模版文件 使用 Handlebars 语法
+        templateFile: 'plop-template/package.hbs' // 模版文件 使用 Handlebars 语法
                                                     // 通常在项目的根目录
       },
       {
         type: 'add', // 添加文件
-        path: 'packages/{{name}}/index.js',
+        path: 'packages/{{name}}/src/index.js',
         templateFile: '' // 模版文件 使用 Handlebars 语法
+      },
+      {
+        type: 'add', // 添加文件
+        path: 'packages/{{name}}/rollup_config.js',
+        templateFile: 'plop-template/rollup_config.hbs' // 模版文件 使用 Handlebars 语法
       },
       // ... 多文件模版
     ]
