@@ -29,7 +29,7 @@ module.exports = plop => {
       {
         type: 'add', // 添加文件
         path: 'packages/{{name}}/src/index.js',
-        templateFile: '' // 模版文件 使用 Handlebars 语法
+        templateFile: 'plop-template//index.hbs' // 模版文件 使用 Handlebars 语法
       },
       {
         type: 'add', // 添加文件

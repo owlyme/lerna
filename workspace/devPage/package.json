@@ -1,11 +1,12 @@
 {
-  "name": "demo-test",
+  "name": "devPage",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "Button": "^1.0.2",
     "loadsh": "^0.0.4",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
@@ -60,8 +61,6 @@
     "postcss-cssnext": "^3.1.0",
     "postcss-nested": "^5.0.5",
     "postcss-simple-vars": "^6.0.3",
-    "rollup": "^2.41.5",
-    "rollup-pkg": "1.0.1",
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-copy": "^3.4.0",
