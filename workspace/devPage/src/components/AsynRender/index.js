@@ -57,8 +57,8 @@ export const AsynRender = ({componetsUrl, componentName, ...others}) => {
 export default function AsynRenderList({componetList = []}) {
     return <>
         {
-        componetList.map((com) => <AsynRender 
-            key={com.id} 
+        componetList.map((com, index) => <AsynRender 
+            key={index} 
             componetsUrl={com.componentUrl} 
             componentName={com.name} />)
         }

@@ -2,8 +2,8 @@ import React from "react"
 
 function userComponetList({componetList = [], onSelect = f=>f}) {
     return <div style={{cursor: "pointer"}}>{
-        componetList.map((com, index) => <div 
-            key={com.id} 
+        componetList.map((com, index) => <div
+            key={index} 
             onClick={() => onSelect(com)}>
                 {com.name}
             </div>)
