@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react"
-import Button from "Button/src/index"
+import Button from "Button/dist/Button.umd"
 import AsynRenderList from "../../components/AsynRender"
 import UserComponetList from "../../components/UserComponetList"
 
