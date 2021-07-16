@@ -10,6 +10,4 @@ function userComponetList({componetList = [], onSelect = f=>f}) {
     }</div>
 };
 
-
-
 export default userComponetList

@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react"
-import Button from "Button/dist/Button.umd"
+// import Button from "Button/dist/Button.umd"
 import AsynRenderList from "../../components/AsynRender"
 import UserComponetList from "../../components/UserComponetList"
 
@@ -48,7 +48,7 @@ const AsynComponentsPage = () => {
     return (
         <div className="async-page">
             <div className="async-page-col">
-                <Button />
+                
                 选择组件
                 <UserComponetList componetList={userComponetList} onSelect={onSelectComponent}/>
             </div>

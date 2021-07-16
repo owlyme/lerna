@@ -4,11 +4,12 @@ let scritpsMap = {};
 
 function loadScript(url, componentName, cb =f=>f) {
     let scriptId = "scriptId-";
-    window.React = React;
+    if (!window.React) window.React = React;
 
     let afterLoadedFn = () => {
         cb(window.WeiMob[componentName])
     }
+
     if (scritpsMap[url] && window.WeiMob && window.WeiMob[componentName]) {
         cb(window.WeiMob[componentName])
         return
@@ -43,7 +44,7 @@ export const AsynRender = ({componetsUrl, componentName, ...others}) => {
                 <Comp text="a2a2" />
             )
         })
-    }, [])  
+    }, []);
 
     
     return (<>
@@ -51,7 +52,6 @@ export const AsynRender = ({componetsUrl, componentName, ...others}) => {
             loaded ? AsyncComponent : "loading"
         } 
     </>)
-
 }
 
 export default function AsynRenderList({componetList = []}) {
