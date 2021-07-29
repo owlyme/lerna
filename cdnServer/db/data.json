@@ -1,0 +1,153 @@
+{
+  "user": [],
+  "product": [
+    {
+      "id": 1626177218084,
+      "name": "ee",
+      "desc": "ee",
+      "userName": "徐远"
+    }
+  ],
+  "workflow": [
+    {
+      "id": 1626402917636,
+      "name": "1111",
+      "desc": "1111",
+      "appId": "1626400044493",
+      "userName": "徐远"
+    },
+    {
+      "id": 1626400272930,
+      "name": "2222",
+      "desc": "2222",
+      "appId": "1626400044493",
+      "userName": "徐远"
+    },
+    {
+      "id": 1626398165114,
+      "name": "sfds",
+      "desc": "1",
+      "appId": "1626349010220",
+      "userName": "徐远"
+    },
+    {
+      "id": 1626351269498,
+      "name": "adfa",
+      "desc": "asdf",
+      "appId": "1626349099039",
+      "userName": "徐远"
+    }
+  ],
+  "app": [
+    {
+      "id": 1626400044493,
+      "name": "1111",
+      "desc": "1111",
+      "pid": "1626177218084",
+      "userName": "徐远"
+    },
+    {
+      "id": 1626351139943,
+      "name": "sdfas",
+      "desc": "sdfasdfasfdas",
+      "userName": "徐远"
+    },
+    {
+      "id": 1626264843011,
+      "name": "2222",
+      "desc": "2222",
+      "productId": "1626177218084",
+      "userName": "徐远"
+    },
+    {
+      "id": 1626264835887,
+      "name": "1111",
+      "desc": "1111",
+      "productId": "1626177218084",
+      "userName": "徐远"
+    }
+  ],
+  "version": [
+    {
+      "workflow": {
+        "maxNodeId": "n-006",
+        "children": [
+          {
+            "icon": "processorIcon",
+            "label": "Processor",
+            "nodeType": "processor",
+            "draggable": true,
+            "childrenAbleTypes": [],
+            "nodeId": "n-001",
+            "children": []
+          },
+          {
+            "icon": "processorIcon",
+            "label": "Processor",
+            "nodeType": "processor",
+            "draggable": true,
+            "childrenAbleTypes": [],
+            "nodeId": "n-002",
+            "children": []
+          },
+          {
+            "icon": "processorIcon",
+            "label": "Processor",
+            "nodeType": "processor",
+            "draggable": true,
+            "childrenAbleTypes": [],
+            "nodeId": "n-003",
+            "children": []
+          },
+          {
+            "icon": "processorIcon",
+            "label": "Processor",
+            "nodeType": "processor",
+            "draggable": true,
+            "childrenAbleTypes": [],
+            "nodeId": "n-006",
+            "children": []
+          }
+        ],
+        "unSaved": true
+      },
+      "id": "1626402917636",
+      "userName": "徐远"
+    },
+    {
+      "workflow": {
+        "nodeLevelIndex": "0",
+        "nodeThye": "root",
+        "nodeId": 0,
+        "maxNodeId": "n-002",
+        "root": true,
+        "hasListenerNode": false,
+        "children": [
+          {
+            "icon": "listenerIcon",
+            "label": "Listener",
+            "nodeType": "listener",
+            "draggable": false,
+            "deleteForbidden": true,
+            "childrenAbleTypes": [],
+            "nodeId": "n-001",
+            "children": []
+          },
+          {
+            "icon": "listenerIcon",
+            "label": "Listener",
+            "nodeType": "listener",
+            "draggable": false,
+            "deleteForbidden": true,
+            "childrenAbleTypes": [],
+            "nodeId": "n-002",
+            "children": []
+          }
+        ],
+        "unSaved": true
+      },
+      "id": "1626400272930",
+      "userName": "徐远"
+    }
+  ]
+}

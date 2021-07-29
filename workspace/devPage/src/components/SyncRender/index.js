@@ -14,7 +14,7 @@ function loadScript(cb =f=>f) {
         afterLoadedFn()
     }
  
-    s.setAttribute('src', "http://localhost:3000/compose/js?js=A1.umd.js;A2.umd.js");
+    s.setAttribute('src', "http://172.27.43.197:4000/compose/js?js=A1.umd.js;A2.umd.js");
     document.body.appendChild(s);
 }
 
