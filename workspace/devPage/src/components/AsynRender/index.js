@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react"
 
 let scritpsMap = {};
-
+let HOST = 'http://localhost:4000'
 function loadScript(url, componentName, cb =f=>f) {
     let scriptId = "scriptId-";
     if (!window.React) window.React = React;
@@ -29,7 +29,7 @@ function loadScript(url, componentName, cb =f=>f) {
         scritpsMap[url].forEach(fn => fn())
     }
     s.setAttribute('id', scriptId);
-    s.setAttribute('src', url);
+    s.setAttribute('src', HOST + url);
     document.body.appendChild(s);
 }
 

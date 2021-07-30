@@ -1,17 +1,17 @@
 (function (global, factory) {
     typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(require('react')) :
     typeof define === 'function' && define.amd ? define(['react'], factory) :
-    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, (global.WeiMob = global.WeiMob || {}, global.WeiMob.Input = factory(global.React)));
+    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, (global.WeiMob = global.WeiMob || {}, global.WeiMob.Button = factory(global.React)));
 }(this, (function (React) { 'use strict';
 
     function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
     var React__default = /*#__PURE__*/_interopDefaultLegacy(React);
 
-    var Input = function Input() {
-      return /*#__PURE__*/React__default['default'].createElement("input", null);
+    var Button = function Button() {
+      return /*#__PURE__*/React__default['default'].createElement("button", null, "this is button");
     };
 
-    return Input;
+    return Button;
 
 })));

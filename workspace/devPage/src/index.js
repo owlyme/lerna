@@ -25,6 +25,6 @@ reportWebVitals();
 // function view(path) {
 //   return (resolve) => require([`./components/rollup/${path}.js`], resolve)
 // }
-const A1 = () => import(/* webpackChunkName: "A1" */ './components/rollup/A1.js')
+// const A1 = () => import(/* webpackChunkName: "A1" */ './components/rollup/A1.js')
 
-console.log(A1)
+// console.log(A1)

@@ -2,50 +2,54 @@ import React, {useEffect, useState} from "react"
 // import Button from "Button/dist/Button.umd"
 import AsynRenderList from "../../components/AsynRender"
 import UserComponetList from "../../components/UserComponetList"
-
-
 import "./index.css"
 
-function fakeFetch(cb, delay = 1000) {
-    setTimeout(() =>{
-        cb()
-    }, delay) 
-}
-
-let USER_COMPONENTS_LIST = [
-    {
-        id: 1,
-        name: "A1",
-        componentUrl: "/js/A1.umd.js",
-        editorUrl: ""
-    },
-    {
-        id: 2,
-        name: "A2",
-        componentUrl: "/js/A2.umd.js",
-        editorUrl: ""
-    }
-]
 
 const AsynComponentsPage = () => {
     const [userComponetList, setUserComponetList] = useState([]);
     
     useEffect(() => {
-        fakeFetch(() =>{
-            setUserComponetList(USER_COMPONENTS_LIST)
-        }) 
+        fetch('http://localhost:4000/complist')
+        .then(response => response.json())
+        .then(res => 
+            setUserComponetList(res)
+        )
     }, []);
 
     const [userSelectedComponetList, setSelectedComponetList] = useState([]);
 
     function onSelectComponent(comp, index) {
-        let list = [...userSelectedComponetList, comp];
+        const compindex = userSelectedComponetList.findIndex(({id}) => id === comp.id)
 
-        console.log(list);
-        setSelectedComponetList(list);
+        if (!~compindex) {
+            let list = [...userSelectedComponetList, {
+                ...comp,
+                componentUrl: comp.path
+            }];
+    
+            setSelectedComponetList(list);
+        }
+        
+    };
+    const saveConfig = () => {
+        fetch("http://localhost:4000/save/config", {
+            method: 'POST', // or 'PUT'
+            body: JSON.stringify(userSelectedComponetList), // data can be `string` or {object}!
+            headers: new Headers({
+              'Content-Type': 'application/json'
+            })
+          }).then(res => res.json())
+          .then(res => {
+              console.log(res)
+          })
+          .catch(error => console.error('Error:', error))
     };
 
     return (
+        <>
+        <div>
+            <button onClick={saveConfig}>save config</button>
+        </div>
         <div className="async-page">
             <div className="async-page-col">
                 
@@ -65,6 +69,7 @@ const AsynComponentsPage = () => {
                 </div>
             </div>
         </div>
+        </>
     )
 }
 

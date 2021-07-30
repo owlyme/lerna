@@ -22,11 +22,14 @@ function upload ({
         }
     }, (res) => {
         res.setEncoding('utf8');
+        const chunks = []
         res.on('data', (chunk) => {
-            console.log(`BODY: ${chunk}`);
+            console.log(chunks)
+            chunks.push(chunk)
         });
+
         res.on('end', () => {
-            console.log('No more data in response.');
+            console.log(fileName + '上传成功' );
         });
     });
 
@@ -48,10 +51,10 @@ function upload ({
     });
 }
 
-upload({
-    name: '',
-    filePath: './abc.js'
-})
+// upload({
+//     name: '',
+//     filePath: './abc.js'
+// })
 
 
 module.exports = upload

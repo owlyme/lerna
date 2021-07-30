@@ -3,13 +3,13 @@ const fs = require("fs")
 const Router = require('@koa/router');
 const router = new Router();
 
-const publicPath = "../../public/reactComps/";
+const publicPath = "../../public";
 
 router.get('/compose/js', async (ctx, next) => {
     const composeJs = (ctx.query.js || '').split(";")
     
     const readMulitFiles = (pathArr, wirteStream) => {
-        const RS = fs.createReadStream(path.resolve(__dirname, publicPath, pathArr.shift()));
+        const RS = fs.createReadStream(path.join(__dirname, publicPath, pathArr.shift()));
         const leftPath = pathArr.length
         RS.pipe(wirteStream, {end: !leftPath})
         RS.on("end", () => {

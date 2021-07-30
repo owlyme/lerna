@@ -1,43 +1,53 @@
-import React, {useState, useEffect} from "react"
+import React, { useState, useEffect } from "react"
 
-function loadScript(cb =f=>f) {
-
+const HOST = "http://172.27.43.197:4000"
+function loadScript(scriptPath, cb = f => f) {
     window.React = React;
-    console.log("window.WeiMob", window.WeiMob)
-    let afterLoadedFn = () => {
+    // console.log("window.WeiMob", window.WeiMob)
+    const afterLoadedFn = () => {
         cb(window.WeiMob)
     }
 
-    let s = document.createElement("SCRIPT");
+    const SCRIPT = document.createElement("SCRIPT");
 
-    s.onload = () => {
+    SCRIPT.onload = () => {
         afterLoadedFn()
     }
- 
-    s.setAttribute('src', "http://172.27.43.197:4000/compose/js?js=A1.umd.js;A2.umd.js");
-    document.body.appendChild(s);
+
+    SCRIPT.setAttribute('src', scriptPath);
+    document.body.appendChild(SCRIPT);
 }
 
+function CompRender({componentName, config}) {
+    const Comp = window.WeiMob[componentName]
+    return <Comp baseConfig={config} />
+}
+export const SyncRender = ({ Component }) => {
+    const [loaded, setLoadedState] = useState(false);
+    const [asyncComponent, setAsyncComponent] = useState([]);
 
-export const SyncRender = ({Component}) => {
-    const [loaded, setLoadedState] = useState(false)
-    const [AsyncComponent, setAsyncComponent] = useState({})
 
     useEffect(() => {
-        loadScript( (componets) => {
-            setLoadedState(true);
-            console.log(componets)
-            setAsyncComponent(componets)
-        })
+        // 1627609007109
+        fetch(HOST + "/get/config?id=1627609007109")
+            .then(response => response.json())
+            .then(res => {
+                const scriptPath = HOST+"/compose/js?js=";
+
+                loadScript(scriptPath + res.map(i=> i.path).join(";"), (componets) => {
+                    setLoadedState(true);
+                    console.log(componets);
+                    setAsyncComponent(res);
+                })
+            })
     }, []);
 
-    
-
-    
     return (<>
         {
             loaded ? <div>
-                {Object.values(AsyncComponent).map(Comp => <Comp />)}
+                {asyncComponent.map(config => <CompRender
+                 key={config.id}
+                 componentName={config.name} />)}
             </div> : "lodading"
         }
     </>)
