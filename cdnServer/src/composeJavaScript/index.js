@@ -29,8 +29,6 @@ router.get('/compose/js', async (ctx, next) => {
     }
 });
 
-
-
 module.exports = function (app) {
     app.use(router.routes()).use(router.allowedMethods());
 }

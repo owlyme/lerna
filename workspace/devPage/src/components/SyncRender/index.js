@@ -26,14 +26,12 @@ export const SyncRender = ({ Component }) => {
     const [loaded, setLoadedState] = useState(false);
     const [asyncComponent, setAsyncComponent] = useState([]);
 
-
     useEffect(() => {
         // 1627609007109
         fetch(HOST + "/get/config?id=1627609007109")
             .then(response => response.json())
             .then(res => {
                 const scriptPath = HOST+"/compose/js?js=";
-
                 loadScript(scriptPath + res.map(i=> i.path).join(";"), (componets) => {
                     setLoadedState(true);
                     console.log(componets);
